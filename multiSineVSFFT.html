@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Frequency Selection for SVG Images</title>
+</head>
+<body>
+<h1>Select Frequency for SVG Image</h1>
+
+<select id="imageSelector" onchange="updateImageSource()">
+    <option value="MultiSineFFTComp_imu_Exp_0_Axis_2_freq_10.00_Hz.svg">10 Hz</option>
+    <option value="MultiSineFFTComp_imu_Exp_1_Axis_2_freq_12.50_Hz.svg">12.50 Hz</option>
+    <option value="MultiSineFFTComp_imu_Exp_2_Axis_2_freq_16.00_Hz.svg">16 Hz</option>
+    <option value="MultiSineFFTComp_imu_Exp_3_Axis_2_freq_20.00_Hz.svg">20 Hz</option>
+    <option value="MultiSineFFTComp_imu_Exp_4_Axis_2_freq_25.00_Hz.svg">25 Hz</option>
+    <option value="MultiSineFFTComp_imu_Exp_5_Axis_2_freq_31.50_Hz.svg">31.50 Hz</option>
+    <option value="MultiSineFFTComp_imu_Exp_6_Axis_2_freq_40.00_Hz.svg">40 Hz</option>
+    <option value="MultiSineFFTComp_imu_Exp_7_Axis_2_freq_46.70_Hz.svg">46.70 Hz</option>
+    <option value="MultiSineFFTComp_imu_Exp_8_Axis_2_freq_50.00_Hz.svg">50 Hz</option>
+    <option value="MultiSineFFTComp_imu_Exp_9_Axis_2_freq_53.30_Hz.svg">53.30 Hz</option>
+    <option value="MultiSineFFTComp_imu_Exp_10_Axis_2_freq_63.00_Hz.svg">63 Hz</option>
+    <option value="MultiSineFFTComp_imu_Exp_11_Axis_2_freq_80.00_Hz.svg">80 Hz</option>
+    <option value="MultiSineFFTComp_imu_Exp_12_Axis_2_freq_100.00_Hz.svg">100 Hz</option>
+    <option value="MultiSineFFTComp_imu_Exp_13_Axis_2_freq_125.00_Hz.svg">125 Hz</option>
+    <option value="MultiSineFFTComp_imu_Exp_14_Axis_2_freq_160.00_Hz.svg">160 Hz</option>
+    <option value="MultiSineFFTComp_imu_Exp_15_Axis_2_freq_200.00_Hz.svg">200 Hz</option>
+</select>
+<br>
+<img id="selectedImage" src="" alt="Selected Frequency Image" style="width:100%;">
+
+<script>
+function updateImageSource() {
+    var selector = document.getElementById('imageSelector');
+    var selectedValue = selector.value;
+    var imageElement = document.getElementById('selectedImage');
+    imageElement.src = 'https://path-to-your-repo/MultiSineVSFFT/' + selectedValue;
+}
+</script>
+
+</body>
+</html>
