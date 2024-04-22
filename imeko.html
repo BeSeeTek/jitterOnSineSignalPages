@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Video Selection</title>
+</head>
+<body>
+<a href="https://doi.org/10.5281/zenodo.10111677"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.10111677.svg" alt="DOI"></a><br>
+
+<!-- Dropdown for selecting videos -->
+<select id="videoSelector" onchange="updateVideoSource()">
+    <option value="IMEKOgaussCorrelatedDriftFullSweep_DinA4Scaled.webm">Gauss Correlated Drift Full Sweep</option>
+    <option value="IMEKOgaussCorrelatedDriftSingle3Hz_DinA4Scaled.webm">Gauss Correlated Drift Single 3Hz</option>
+    <option value="IMEKOgaussJitterFullSweep_DinA4Scaled.webm">Gauss Jitter Full Sweep</option>
+    <option value="IMEKOlinearDriftFullSweep_DinA4Scaled.webm">Linear Drift Full Sweep</option>
+    <option value="IMEKOquadraticDriftFullSweep_DinA4Scaled.webm" selected>Quadratic Drift Full Sweep</option>
+    <option value="IMEKOsawthothDriftFullSweep_DinA4Scaled.webm">Sawtooth Drift Full Sweep</option>
+    <option value="IMEKOsinDriftFullSweep_DinA4Scaled.webm">Sin Drift Full Sweep</option>
+    <option value="IMEKOsinFullDriftFullSweep_DinA4Scaled.webm">Sin Full Drift Full Sweep</option>
+    <option value="IMEKOtriangleDriftFullSweep_DinA4Scaled.webm">Triangle Drift Full Sweep</option>
+    <option value="IMEKOuniformJitterFullSweep_DinA4Scaled.webm">Uniform Jitter Full Sweep</option>
+</select><br>
+
+<!-- Video player setup -->
+<video autoplay muted playsinline controls id="videoPlayer">
+  <source src="https://raw.githubusercontent.com/BeSeeTek/jitterOnSineSignalPages/main/videos/IMEKOquadraticDriftFullSweep_DinA4Scaled.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
+
+<script>
+function updateVideoSource() {
+    var selector = document.getElementById('videoSelector');
+    var selectedValue = selector.value;
+    var videoPlayer = document.getElementById('videoPlayer');
+    videoPlayer.src = 'https://raw.githubusercontent.com/BeSeeTek/jitterOnSineSignalPages/main/videos/' + selectedValue;
+}
+</script>
+
+</body>
+</html>
